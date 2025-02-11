@@ -33,7 +33,7 @@ jobs:
         run: npx nx report
 
       - name: Set repository field in package.json
-        run: npm pkg set repository.url="${{ github.repositoryUrl }}"
+        run: npm pkg set repository.url="${{ github.repositoryUrl }}" -ws
 
       - name: Publish packages
         run: npx nx release publish
