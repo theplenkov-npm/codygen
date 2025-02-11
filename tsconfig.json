@@ -3,6 +3,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "target": "ESNext"
   }
 }
