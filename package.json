@@ -4,7 +4,8 @@
   "description": "Cody CLI wrapper for code generation",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "nx run-many --target=lint --exclude=main"
   },
   "author": "Petr Plenkov",
   "license": "ISC",

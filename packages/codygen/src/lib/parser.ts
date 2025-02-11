@@ -11,7 +11,7 @@ const snippetEndRegex = /^```$/;
 export function parseChatOutput(input: string): Array<Snippet> {
   const snippets: Snippet[] = [];
 
-  var currentFile: Snippet | undefined;
+  let currentFile: Snippet | undefined;
 
   for (const line of input.split('\n')) {
     if (!currentFile && snippetStartRegex.test(line)) {
