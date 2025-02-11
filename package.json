@@ -1,0 +1,22 @@
+{
+  "name": "main",
+  "version": "1.0.0",
+  "description": "Cody CLI wrapper for code generation",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Petr Plenkov",
+  "license": "ISC",
+  "devDependencies": {
+    "@nx/js": "^20.4.2",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "nx": "20.4.2"
+  },
+  "nx": {},
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {}
+}
