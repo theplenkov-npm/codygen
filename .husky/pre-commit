@@ -3,7 +3,8 @@ nx format:write --uncommitted
 # nx updates package-lock.json incorrectly, so we need to update it manually
 if git diff --cached --name-only | grep package.json; then
   echo "Detected package.json change, updating package-lock.json..."
-  npm install --package-lock-only  
+  npm install --package-lock-only
+  git add package-lock.json  
 fi
 
 git update-index --again
