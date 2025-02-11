@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
     "lint": "nx run-many --target=lint --exclude=main",
-    "preversion": "nx release version ${npm_new_version}"
+    "preversion": "env"
   },
   "author": "Petr Plenkov",
   "license": "ISC",
