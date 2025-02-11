@@ -6,7 +6,7 @@
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
   "customizations": {
     "vscode": {
-      "extensions": ["nrwl.angular-console"]
+      "extensions": ["nrwl.angular-console", "vitest.explorer"]
     }
   },
   "features": {
