@@ -47,6 +47,7 @@
     }
   ],
   "release": {
+    "projects": ["codygen"],
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
     }
@@ -58,7 +59,7 @@
       "inputs": ["default", "^default"]
     },
     "test": {
-      "dependsOn": ["^build", "^build", "^build", "^build"]
+      "dependsOn": ["^build"]
     }
   }
 }
