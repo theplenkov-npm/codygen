@@ -80,6 +80,9 @@
     },
     "test": {
       "dependsOn": ["^build"]
+    },
+    "nx-release-target": {
+      "dependsOn": ["build"]
     }
   }
 }

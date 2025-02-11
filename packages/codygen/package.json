@@ -13,6 +13,9 @@
       "default": "./dist/index.esm.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@commander-js/extra-typings": "^13.1.0",
     "ora": "^8.2.0",
