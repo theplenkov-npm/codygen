@@ -2,8 +2,9 @@
 name: Publish
 
 on:
-  release:
-    types: [released]
+  push:
+    tags:
+      - 'v*.*.*'
 
 jobs:
   test:
