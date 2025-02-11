@@ -50,6 +50,7 @@
     "projects": ["codygen"],
     "version": {
       "preVersionCommand": "npx nx run-many -t build",
+      "conventionalCommits": true,
       "generatorOptions": {
         "skipLockFileUpdate": true
       }
