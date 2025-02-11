@@ -31,6 +31,7 @@
     "rollup": "^4.14.0",
     "swc-loader": "0.1.15",
     "tslib": "^2.3.0",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.19.0",
     "verdaccio": "^5.0.4",
@@ -40,5 +41,6 @@
   "nx": {},
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {}
 }
