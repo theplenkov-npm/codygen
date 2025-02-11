@@ -49,7 +49,10 @@
   "release": {
     "projects": ["codygen"],
     "version": {
-      "preVersionCommand": "npx nx run-many -t build"
+      "preVersionCommand": "npx nx run-many -t build",
+      "generatorOptions": {
+        "skipLockFileUpdate": true
+      }
     },
     "changelog": {
       "projectChangelogs": {
