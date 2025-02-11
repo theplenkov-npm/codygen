@@ -1,3 +1,7 @@
+## 1.1.4 (2025-02-11)
+
+This was a version bump only for codygen to align it with other projects, there were no code changes.
+
 ## 1.1.3 (2025-02-11)
 
 This was a version bump only for codygen to align it with other projects, there were no code changes.
