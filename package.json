@@ -17,6 +17,7 @@
     "@nx/rollup": "20.4.2",
     "@nx/vite": "20.4.2",
     "@nx/web": "20.4.2",
+    "@rollup/plugin-alias": "^5.1.1",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.3.12",
     "@swc/core": "~1.5.7",
@@ -43,5 +44,6 @@
   "nx": {},
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {}
 }

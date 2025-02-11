@@ -2,7 +2,7 @@ import { program } from '@commander-js/extra-typings';
 
 // codygen CLI
 // Usage: Echo "Hello, World ts app" | codygen
-import { codygen } from './lib/codygen.js';
+import { codygen } from './lib/codygen';
 
 program
   .name('codygen')

@@ -1,9 +1,10 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
+    "composite": true,
+    "outDir": "dist",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -13,10 +14,6 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "codygen": ["packages/codygen/src/index.ts"]
-    }
-  },
-  "exclude": ["node_modules", "tmp"]
+    "baseUrl": "."
+  }
 }

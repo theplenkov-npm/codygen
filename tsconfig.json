@@ -5,5 +5,12 @@
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "target": "ESNext"
-  }
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/codygen"
+    }
+  ],
+  "include": []
 }

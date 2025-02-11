@@ -1,7 +1,7 @@
 import { promisify } from 'node:util';
 import { ChildProcessByStdio, exec, spawn } from 'node:child_process';
 import * as fs from 'node:fs';
-import { parseChatOutput } from './parser.js';
+import { parseChatOutput } from './parser';
 
 import { oraPromise } from 'ora';
 import chalk from 'chalk';

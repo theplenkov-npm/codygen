@@ -1,5 +1,4 @@
 import { parseChatOutput } from './parser';
-
 describe('parseChatOutput', () => {
   it('should parse single snippet correctly', () => {
     const input = `\`\`\`typescript:test.ts
