@@ -1,0 +1,4 @@
+chore(main): dummy commit
+
+# Still contains comments
+- but also contains lines that are not comments

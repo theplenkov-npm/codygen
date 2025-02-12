@@ -5,8 +5,8 @@ Context: prepare-commit-msg hook with given args $1 $2 $3.
 Respond directly as a commit message, do not add your comments. First line of your response - is commit title!
 Please group changes by packages
 "
-# Check if commit message contains only comments or is empty
-if ! grep -vqE '^[[:space:]]*#' "$1"; then
+# Check if commit message is empty or contains only commented lines
+if ! grep -E '^[^#[:space:]]' "$1" >/dev/null; then
   echo "Commit message is empty, generating one with Cody..." >&2
   $DIFF_COMMAND -- . ':(exclude)package-lock.json' | cody chat --stdin -m "$CODY_PROMPT" --context-file="$1" > "$1"
 else
