@@ -72,11 +72,10 @@ export async function codygen(options?: CodygenOptions) {
         return acc;
       }
       const targetPath = options?.output
-        ? path.join(options.output, current.filename)
+        ? path.resolve(options.output, current.filename)
         : current.filename;
       return acc.concat({ ...current, targetPath });
-    }, [] as Array<Snippet & { targetPath: string }>);
-    // Print overview of parsed files as a table: filename, number of lines
+    }, [] as Array<Snippet & { targetPath: string }>); // Print overview of parsed files as a table: filename, number of lines
     console.log(ok, 'Cody generated the following files:');
     const overview = targetSnippets.map(
       ({ targetPath: filename, content }) => ({
