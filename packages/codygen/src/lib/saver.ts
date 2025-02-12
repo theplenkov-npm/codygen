@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { access, mkdir, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 interface FileSaverInput {
@@ -11,13 +11,10 @@ type FileSaverCallback = (file: string) => void;
 
 export async function saveAll(
   files: FileSaverInput[],
-  targetFolder?: string,
   onSuccess?: FileSaverCallback
 ): Promise<void> {
   await Promise.all(
-    files.map(async (file) => {
-      const targetPath = resolveFilename(file.filename, targetFolder);
-
+    files.map(async ({ filename: targetPath, content }) => {
       // create folder if missing
       const folder = path.dirname(targetPath);
 
@@ -25,7 +22,7 @@ export async function saveAll(
         await mkdir(folder, { recursive: true });
       }
 
-      await writeFile(targetPath, file.content);
+      await writeFile(targetPath, content);
 
       if (onSuccess) {
         onSuccess(targetPath);
