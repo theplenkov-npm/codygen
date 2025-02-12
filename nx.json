@@ -84,7 +84,7 @@
     "test": {
       "dependsOn": ["^build"]
     },
-    "nx-release-target": {
+    "nx-release-publish": {
       "dependsOn": ["build"]
     }
   }
