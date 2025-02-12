@@ -1,0 +1,8 @@
+# Prepare the commit message using Cody
+DIFF_COMMAND="git diff --staged --unified=100"
+CODY_PROMPT="Prepare or update commit message received with `$DIFF_COMMAND`
+Context: prepare-commit-msg hook with given args $1 $2 $3.
+Respond directly as a commit message, do not add your comments. First line of your response - is commit title!
+Please group changes by packages
+"
+$DIFF_COMMAND | cody chat --stdin -m "$CODY_PROMPT" --context-file="$1" > "$1"
