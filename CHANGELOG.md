@@ -1,3 +1,17 @@
+## 1.1.10 (2025-02-12)
+
+### 🚀 Features
+
+- Add Git hook for AI-powered commit message generation ([a2fd290](https://github.com/theplenkov-npm/codygen/commit/a2fd290))
+
+### 🩹 Fixes
+
+- **husky:** improve commit message check to handle comments and empty messages ([556ef2d](https://github.com/theplenkov-npm/codygen/commit/556ef2d))
+
+### ❤️ Thank You
+
+- Petr Plenkov
+
 ## 1.1.9 (2025-02-11)
 
 This was a version bump only, there were no code changes.
