@@ -8,6 +8,7 @@ const nx = withNx({
   tsConfig: './tsconfig.lib.json',
   compiler: 'swc',
   format: ['esm'],
+  sourceMap: true,
 });
 
 export default defineConfig({

@@ -1,0 +1,120 @@
+I'll help you create a simple Hello World TypeScript application. I'll create a basic project structure with the necessary files.
+
+First, let's create a project structure:
+
+```bash
+mkdir hello-world-ts
+cd hello-world-ts
+```
+
+Now, let's initialize a new Node.js project and install TypeScript:
+
+```bash
+npm init -y
+npm install typescript --save-dev
+npm install @types/node --save-dev
+```
+
+Here's the TypeScript configuration file:
+
+```json:tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
+```
+
+Create the main TypeScript file:
+
+```typescript:src/index.ts
+class Greeter {
+    private greeting: string;
+
+    constructor(message: string) {
+        this.greeting = message;
+    }
+
+    greet(): string {
+        return `Hello, ${this.greeting}!`;
+    }
+}
+
+const greeter = new Greeter('World');
+console.log(greeter.greet());
+```
+
+Update the package.json with scripts to build and run the application:
+
+```json:package.json
+{
+  "name": "hello-world-ts",
+  "version": "1.0.0",
+  "description": "A simple TypeScript Hello World application",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "typescript": "^4.5.2"
+  }
+}
+```
+
+To run the application:
+
+1. Build the TypeScript code:
+```bash
+npm run build
+```
+
+2. Run the compiled JavaScript:
+```bash
+npm start
+```
+
+Or do both in one command:
+```bash
+npm run dev
+```
+
+The output should be:
+```
+Hello, World!
+```
+
+This creates a simple TypeScript application that:
+1. Uses classes and type annotations
+2. Compiles TypeScript to JavaScript
+3. Runs in Node.js
+
+The project structure will look like this:
+```
+hello-world-ts/
+├── node_modules/
+├── src/
+│   └── index.ts
+├── dist/
+│   └── index.js (generated after build)
+├── package.json
+├── package-lock.json
+└── tsconfig.json
+```
+
+You can extend this basic setup by adding more features, testing frameworks, or additional TypeScript features as needed.
+
