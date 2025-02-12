@@ -1,6 +1,6 @@
 // cody output parser
 
-interface Snippet {
+export interface Snippet {
   filename: string;
   content: string;
 }

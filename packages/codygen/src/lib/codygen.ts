@@ -1,7 +1,7 @@
 import { promisify } from 'node:util';
 import { ChildProcessByStdio, exec, spawn } from 'node:child_process';
 import * as fs from 'node:fs';
-import { parseChatOutput } from './parser';
+import { parseChatOutput, Snippet } from './parser';
 
 import { oraPromise } from 'ora';
 import chalk from 'chalk';
@@ -62,26 +62,53 @@ export async function codygen(options?: CodygenOptions) {
       return;
     }
 
+    // reduce snippets that's only first occurence of the file in the array stays
+    // somehow Cody can add the file content and then later use it again explaining some parts of the code
+    // additionally extends the arrray with the target path which is output folder + filename
+    // in case of no output folder, the filename is the target path
+
+    const targetSnippets = snippets.reduce((acc, current) => {
+      if (acc.find((item) => item.filename === current.filename)) {
+        return acc;
+      }
+      const targetPath = options?.output
+        ? path.join(options.output, current.filename)
+        : current.filename;
+      return acc.concat({ ...current, targetPath });
+    }, [] as Array<Snippet & { targetPath: string }>);
     // Print overview of parsed files as a table: filename, number of lines
     console.log(ok, 'Cody generated the following files:');
-    const overview = snippets.map(({ filename, content }) => ({
-      filename,
-      lines: content.split('\n').length,
-      exists: fs.existsSync(filename),
-    }));
+    const overview = targetSnippets.map(
+      ({ targetPath: filename, content }) => ({
+        filename,
+        lines: content.split('\n').length,
+        exists: fs.existsSync(filename),
+      })
+    );
     console.table(overview);
     console.log();
 
+    // create output folder if it doesn't exist
+    if (options?.output && !fs.existsSync(options.output)) {
+      fs.mkdirSync(options.output, { recursive: true });
+    }
+
     // Create a new file for each generated code snippet
     await Promise.all(
-      snippets.map(async ({ filename, content }) => {
-        console.log(`.. Saving ${filename}`);
-
+      targetSnippets.map(async ({ filename, content }) => {
         const filepath = options?.output
           ? path.join(options.output, filename)
           : filename;
 
-        return writeFile(filepath, content);
+        // create folder if missing ( not same as above )
+        // there we created the output folder, but cody can create nested files
+        const folder = path.dirname(filepath);
+        if (folder && !fs.existsSync(folder)) {
+          fs.mkdirSync(folder, { recursive: true });
+        }
+
+        await writeFile(filepath, content);
+        console.log(ok, `-> ${filepath}`);
       })
     );
   } catch (error: any) {
