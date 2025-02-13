@@ -8,7 +8,7 @@ import { extractSnpipets } from '../lib/extractor';
 // - write code snippets to files
 
 export default new Command('extract')
-  .description('Extract file content from the Cody chat response and save them')
+  .description('Extract files from the Cody chat response')
   .option('-o,--output <output>', 'Output folder')
   .action(async ({ output }) => {
     try {
@@ -21,4 +21,12 @@ export default new Command('extract')
       }
       process.exit(1);
     }
-  });
+  })
+  .addHelpText(
+    'afterAll',
+    `
+Examples:
+  # Chat with Cody and extract results by piping to the codygen
+  $ cody chat -m "Sample TS app" | codygen extract -o dist
+`
+  );
