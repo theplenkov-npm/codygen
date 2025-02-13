@@ -1,3 +1,13 @@
+## 1.4.2 (2025-02-13)
+
+### 🚀 Features
+
+- improve code quality and type safety ([fc4de51](https://github.com/theplenkov-npm/codygen/commit/fc4de51))
+
+### ❤️ Thank You
+
+- Petr Plenkov
+
 ## 1.4.1 (2025-02-13)
 
 This was a version bump only for codygen to align it with other projects, there were no code changes.
