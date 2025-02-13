@@ -1,3 +1,15 @@
+## 1.4.0 (2025-02-13)
+
+### 🚀 Features
+
+- add hello-world-ts e2e test with matrix config ([40eee5b](https://github.com/theplenkov-npm/codygen/commit/40eee5b))
+- **codygen:** add config file support and improve CLI ([392467f](https://github.com/theplenkov-npm/codygen/commit/392467f))
+- **codygen:** update docs and improve chat command options ([a68136b](https://github.com/theplenkov-npm/codygen/commit/a68136b))
+
+### ❤️ Thank You
+
+- Petr Plenkov
+
 ## 1.3.0 (2025-02-13)
 
 This was a version bump only, there were no code changes.
