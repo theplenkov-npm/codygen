@@ -8,7 +8,7 @@ The `codygen` project provides a command-line interface (CLI) tool designed to s
 
 ## Packages
 
-- [codygen CLI ](./README.md).
+- [codygen CLI ](./packages/codygen/README.md).
 
 ## Contribution Guide
 
