@@ -15,10 +15,13 @@ export function parseChatOutput(input: string): Array<Snippet> {
 
   for (const line of input.split('\n')) {
     if (!currentFile && snippetStartRegex.test(line)) {
-      currentFile = {
-        filename: line.match(snippetStartRegex)![1],
-        content: '',
-      };
+      const match = line.match(snippetStartRegex);
+      if (match?.[1]) {
+        currentFile = {
+          filename: match[1],
+          content: '',
+        };
+      }
     }
 
     if (currentFile && snippetEndRegex.test(line)) {

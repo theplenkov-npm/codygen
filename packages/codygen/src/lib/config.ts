@@ -6,7 +6,7 @@ type MaybeArray<T> = T | Array<T>;
 
 type MaybeFunction<T> = T | (() => T | Promise<T>);
 
-export interface CodygenConfig {
+export interface CodygenConfigSchhema {
   prompt: MaybeFunction<MaybeArray<string>>;
   context?: MaybeFunction<MaybeArray<string>>;
   output?: string;
@@ -27,7 +27,7 @@ class ConfigLoader<T> {
 
 export class CodygenConfig {
   static async load(filepath: string) {
-    const loader = new ConfigLoader<CodygenConfig>();
+    const loader = new ConfigLoader<CodygenConfigSchhema>();
     return await loader.load(filepath);
   }
   static define(config: CodygenConfig) {

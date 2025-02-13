@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs';
-import { access, mkdir, stat, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 interface FileSaverInput {

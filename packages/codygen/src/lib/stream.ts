@@ -8,7 +8,7 @@ export async function runCommandWithInput(
   args: string[],
   input: Readable | string
 ): Promise<string> {
-  return new Promise(async (resolve, reject) => {
+  return new Promise((resolve, reject) => {
     const child = spawn(command, args, {
       stdio: ['pipe', 'pipe', 'inherit'],
     });
@@ -22,11 +22,11 @@ export async function runCommandWithInput(
 
     // Capture stdout
     const outputChunks: Buffer[] = [];
-    await pipeline(child.stdout, async function* (source) {
+    pipeline(child.stdout, async function (source) {
       for await (const chunk of source) {
         outputChunks.push(chunk);
       }
-    });
+    }).catch(reject);
 
     // Wait for process to exit
     child.on('exit', (code) => {

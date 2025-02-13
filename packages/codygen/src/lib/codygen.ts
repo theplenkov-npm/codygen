@@ -69,16 +69,15 @@ export async function codygen(options?: CodygenOptions) {
 
   try {
     await extractSnpipets(chatOutput, outputFolder);
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Print error message from Cody CLI
-    if (error.message) {
+    if (error instanceof Error) {
       console.error('Cody CLI error:', error.message);
     } else {
       console.error('Cody CLI error:', error);
     }
   }
 }
-
 function args(name: string, values?: Array<string>) {
   return values?.map((value) => [name, value]).flat() || [];
 }

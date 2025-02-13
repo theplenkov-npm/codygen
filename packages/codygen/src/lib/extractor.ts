@@ -81,11 +81,11 @@ export async function extractSnpipets(
 }
 
 async function readStream(stream: Readable): Promise<string> {
-  const chunks: any[] = [];
+  const chunks: Buffer[] = [];
 
   await pipeline(stream, async (source) => {
     for await (const chunk of source) {
-      chunks.push(chunk);
+      chunks.push(Buffer.from(chunk));
     }
   });
 
