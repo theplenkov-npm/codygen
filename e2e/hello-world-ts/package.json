@@ -1,0 +1,16 @@
+{
+  "name": "hello-world-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "codygen chat --config codygen.config.ts",
+    "build:matrix:step": "codygen chat --config matrix.config.ts",
+    "build:matrix": "parallel -j3 --colsep ' ' \"API={1} RUNTIME={2} npm run build:matrix:step\" ::: petshop brewery forex ::: node java python",
+    "test": "echo $API $RUNTIME",
+    "test:matrix": "parallel --colsep ' ' \"API={1} RUNTIME={2} npm run test\" ::: petshop brewery forex ::: node java python"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -12,7 +12,7 @@
   "features": {
     "ghcr.io/devcontainers/features/java:1": {},
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": ["libsecret-tools", "gnome-keyring"]
+      "packages": ["libsecret-tools", "gnome-keyring", "parallel"]
     },
     "ghcr.io/devcontainers-extra/features/npm-package:1": {
       "package": "@sourcegraph/cody"
