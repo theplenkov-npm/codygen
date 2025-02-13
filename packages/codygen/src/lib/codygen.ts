@@ -26,7 +26,7 @@ export async function codygen(options?: CodygenOptions) {
     context ??= await toStringArrayAsync(config.context);
 
     // Create a Readable stream from the prompt string
-    inputStream = Readable.from([prompt]);
+    inputStream = Readable.from(Buffer.from(prompt || '', 'utf8'));
   } else if (!process.stdin.isTTY) {
     console.log('Using prompt from stdin');
 

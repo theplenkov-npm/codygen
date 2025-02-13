@@ -14,4 +14,6 @@ export default function () {
   program.parseAsync(process.argv);
 }
 
-export { CodygenConfig } from './lib/config';
+export { config } from './lib/config';
+export { from } from './lib/from';
+export { type CodygenConfigSchema } from './lib/config';

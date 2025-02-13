@@ -8,7 +8,8 @@
     "build:matrix:step": "codygen chat --config matrix.config.ts",
     "build:matrix": "parallel -j3 --colsep ' ' \"API={1} RUNTIME={2} npm run build:matrix:step\" ::: petshop brewery forex ::: node java python",
     "test": "echo $API $RUNTIME",
-    "test:matrix": "parallel --colsep ' ' \"API={1} RUNTIME={2} npm run test\" ::: petshop brewery forex ::: node java python"
+    "test:matrix": "parallel --colsep ' ' \"API={1} RUNTIME={2} npm run test\" ::: petshop brewery forex ::: node java python",
+    "test:paths": "codygen chat --config=configs/hello-world.ts"
   },
   "author": "",
   "license": "ISC",
