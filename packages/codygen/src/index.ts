@@ -11,3 +11,5 @@ program
   .addCommand(extract);
 
 program.parseAsync(process.argv);
+
+export { CodygenConfig } from './lib/config';

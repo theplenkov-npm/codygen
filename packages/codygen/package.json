@@ -23,5 +23,8 @@
   },
   "directories": {
     "bin": "bin"
+  },
+  "engines": {
+    "node": ">=22.6.0"
   }
 }

@@ -5,9 +5,10 @@ import { codygen } from '../lib/codygen';
 export default new Command('chat')
   .description('Chat with Cody and extract files from the response')
   .option('-o,--output <output>', 'Output folder')
-  .option('-c, --context <context...>')
-  .action(({ output, context }) => {
-    codygen({ output, context });
+  .option('--context <context...>', 'Context file(s)')
+  .option('-c, --config <config>', 'Codygen config file')
+  .action((options) => {
+    codygen(options);
   })
   .addHelpText(
     'afterAll',
