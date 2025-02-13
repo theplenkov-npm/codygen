@@ -1,3 +1,13 @@
+## 1.5.0 (2025-02-13)
+
+### 🚀 Features
+
+- **codygen:** refactor CLI entry point to use start function ([20abf6b](https://github.com/theplenkov-npm/codygen/commit/20abf6b))
+
+### ❤️ Thank You
+
+- Petr Plenkov
+
 ## 1.4.2 (2025-02-13)
 
 ### 🚀 Features
