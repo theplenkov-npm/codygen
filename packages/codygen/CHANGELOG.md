@@ -1,3 +1,7 @@
+## 1.4.1 (2025-02-13)
+
+This was a version bump only for codygen to align it with other projects, there were no code changes.
+
 ## 1.4.0 (2025-02-13)
 
 ### 🚀 Features
