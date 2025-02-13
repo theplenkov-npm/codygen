@@ -4,12 +4,14 @@ import { program } from '@commander-js/extra-typings';
 import extract from './commands/extract';
 import chat from './commands/chat';
 
-program
-  .name('codygen')
-  .description('Sourcegraph Cody CLI wrapper with extra features')
-  .addCommand(chat)
-  .addCommand(extract);
+export default function () {
+  program
+    .name('codygen')
+    .description('Sourcegraph Cody CLI wrapper with extra features')
+    .addCommand(chat)
+    .addCommand(extract);
 
-program.parseAsync(process.argv);
+  program.parseAsync(process.argv);
+}
 
 export { CodygenConfig } from './lib/config';
